@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './NavBar.css';
-import romeo_logo from '../Assets/romeo_logo2.svg'
+import romeo_logo from '../Assets/romeo_logo2.svg';
+import romeo_img from '../Assets/romeo_img.svg'
 import { useStateValue } from '../Context/StateProvider';
 import { ApiService } from '../Services/ApiService';
 import { actionType } from '../Context/Reducer';
@@ -10,8 +11,9 @@ import { actionType } from '../Context/Reducer';
 export const NavBar =()=> {
     const [state, dispatch] = useStateValue();
     const [length, setLength] = useState(100);
-    const [usersList, setUsersList] = useState([])
-    const [userIdList, setUserIdList] = useState([])
+    const [skelton, setSkleton] = useState([]);
+    const [usersList, setUsersList] = useState([]);
+    const [userIdList, setUserIdList] = useState([]);
     const {SET_USERS_LIST} = actionType
 
     useEffect(()=>{
@@ -20,6 +22,14 @@ export const NavBar =()=> {
     },[])
 
     const handleSearch = (e) => {
+        // showing skeleton while loading
+        let userList = []
+        while(userList.length < usersList.length){
+            let data = {picture:{url:romeo_img }}
+            userList.push(data)
+        }
+        dispatch({type: SET_USERS_LIST, payload: userList})
+        // ==================================
         const name = e.target.name;
         let data = {
             name: name,
@@ -49,9 +59,9 @@ export const NavBar =()=> {
                         userIds.push(user.id)
                     })
                     //  calling getUserDetails to fetch user detials bu their Ids
-                    getUserDetails(userIds)
                     setUserIdList(userIds)
-                    setUsersList(users)                             
+                    setUsersList(users)
+                    getUserDetails(users, userIds)                          
                 }
             } else {
                 console.log(response.statusText)
@@ -62,12 +72,13 @@ export const NavBar =()=> {
     }
 
     //  get User details based on their ids 
-    const getUserDetails = async(arr) => {
+    const getUserDetails = async(usersList, arr) => {
         try{
             let apiString = arr.join('&ids=')
             const response = await ApiService.getProfilesById(apiString)
 
             if(response?.status == 200){
+                console.log(response)
                 if (response.data){
                     let res = response.data
                     let newUserList = [...usersList]
@@ -83,7 +94,6 @@ export const NavBar =()=> {
                             newUserList[i] = {...newUserList[i], ...res[index]}
                         }
                     })
-                    console.log(newUserList)
                     setUsersList(newUserList)
                     dispatch({type: SET_USERS_LIST, payload: newUserList}) 
                 }

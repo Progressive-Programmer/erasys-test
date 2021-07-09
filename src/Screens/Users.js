@@ -22,10 +22,10 @@ export const  Users = () =>{
                         </div>
                         <div className="userDetail">
                             <div className="row">
-                                <div className="col colDetail"><span>{personal ? personal.age : 'age'} | {name? name : 'name'}</span><img/></div>
+                                <div className="col colDetail"><span>{personal ? personal.age+"  | "  : ''}{name? name : ''}</span><img/></div>
                             </div>
                             <div className="row">
-                                <div className="col colLocation"><span>{location? location.distance : 'dist'} </span><TelegramIcon style={{ fontSize: 10 }} /></div>
+                                <div className="col colLocation"><span>{location? location.distance : ''} </span><TelegramIcon style={{ fontSize: 10 }} /></div>
                             </div>
                         </div>
                     </div>

@@ -12,6 +12,9 @@ header {
 .banner ul {
     height: 100%;
 }
+.logo {
+    width: 9.375rem;   
+}
 .navbar a, .navbar a:hover, .navbar a:focus,.navbar a:active {
     text-decoration: none;
     color: inherit;
@@ -31,9 +34,7 @@ header {
     border-top: rgba(0, 0, 0, 0.681) 1px solid ;
  
 }
-.logo {
-    width: 9.375rem;   
-}
+
 ul{
     display: flex;
     align-items: center !important;

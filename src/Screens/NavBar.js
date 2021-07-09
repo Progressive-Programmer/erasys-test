@@ -28,7 +28,7 @@ export const NavBar =()=> {
         getUsers(data)
     }
 
-
+    //  get user list by length
     const getUsers = async (data)=>{
         try{           
             let response
@@ -48,10 +48,10 @@ export const NavBar =()=> {
                     users.forEach((user,i)=>{
                         userIds.push(user.id)
                     })
+                    //  calling getUserDetails to fetch user detials bu their Ids
                     getUserDetails(userIds)
                     setUserIdList(userIds)
-                    setUsersList(users)                   
-                    dispatch({type: SET_USERS_LIST, payload: users})           
+                    setUsersList(users)                             
                 }
             } else {
                 console.log(response.statusText)
@@ -61,14 +61,31 @@ export const NavBar =()=> {
         }
     }
 
+    //  get User details based on their ids 
     const getUserDetails = async(arr) => {
         try{
             let apiString = arr.join('&ids=')
             const response = await ApiService.getProfilesById(apiString)
-            console.log(response)
+
             if(response?.status == 200){
-                if (response.data){           
-                    
+                if (response.data){
+                    let res = response.data
+                    let newUserList = [...usersList]
+                    //  combining user details 
+                    newUserList.map((user, i)=>{
+                        let index = res.findIndex((usr)=>{
+                            if(usr.id == user.id){
+                                return usr
+                            }
+                        })
+                        //  checking if the user exists
+                        if (index > -1 ){
+                            newUserList[i] = {...newUserList[i], ...res[index]}
+                        }
+                    })
+                    console.log(newUserList)
+                    setUsersList(newUserList)
+                    dispatch({type: SET_USERS_LIST, payload: newUserList}) 
                 }
             } else {
                 console.log(response.statusText)

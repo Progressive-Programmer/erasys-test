@@ -13,18 +13,19 @@ export const  Users = () =>{
         <div className="users">
             <div className="userWrapper">
                 <div className="userGrid">
-                    {usersList? usersList.map((user, i)=>{return(
-
+                    {usersList? usersList.map((user, i)=>{
+                        const {picture, personal, location, name, online_status} = user;
+                    return(
                     <div className="userContainer">
                         <div className="userImage">
-                            <img src={user.picture?  user.picture.url : romeo_img} alt="Image is not available"/>
+                            <img src={picture?  picture.url : romeo_img} alt="Image is not available"/>
                         </div>
                         <div className="userDetail">
                             <div className="row">
-                                <div className="col colDetail"><span>{user.age} | {user.name}</span><img/></div>
+                                <div className="col colDetail"><span>{personal ? personal.age : 'age'} | {name? name : 'name'}</span><img/></div>
                             </div>
                             <div className="row">
-                                <div className="col colLocation"><span>100 </span><TelegramIcon style={{ fontSize: 10 }} /></div>
+                                <div className="col colLocation"><span>{location? location.distance : 'dist'} </span><TelegramIcon style={{ fontSize: 10 }} /></div>
                             </div>
                         </div>
                     </div>

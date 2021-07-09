@@ -1,26 +1,34 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import { apiService } from '../Services/ApiService';
+import romeo_img from '../Assets/romeo_img.svg'
 import './Users.css'
 
 export const  Users = () =>{
-    const [users, setUsers] =useState([
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-        {name:"Bab",age:"30", img_src:"https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg"},
-    ])
+    const [length, setLength] = useState(39);
+    const [users, setUsers] =useState([])
+
+    useEffect(()=>{
+        getUsers(length)
+    },[])
+
+    const getUsers = async(length)=>{
+        try{
+            const response = await apiService.searchUsers(length);
+            console.log(response)
+            if(response.status == 200){
+                if (response.data.items){
+                    let users = response.data.items
+                    setUsers(users)
+                }
+            } else {
+                console.log(response.statusText)
+            }
+        
+        }catch(err){
+            console.log(err)
+        }
+    }
+
     return (
         <div className="users">
             <div className="userWrapper">
@@ -29,7 +37,7 @@ export const  Users = () =>{
 
                     <div className="userContainer">
                         <div className="userImage">
-                            <img src="https://www.planetromeo.com/img/usr/squarish/424x424/2873f9bb8c0d3a6d495cd5e88f.jpg" alt="Image is not available"/>
+                            <img src={user.picture?  user.picture.url : romeo_img} alt="Image is not available"/>
                         </div>
                         <div className="userDetail">
                             <div className="row">

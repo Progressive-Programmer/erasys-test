@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 .users{
+    margin-top: 4rem;
    margin-bottom: 4rem;
    /* max-width: 80%;
    margin: auto; */
@@ -49,6 +50,8 @@
 }
 
 @media screen and (max-width: 576px){
-
+    .users{
+        margin-top: 0.5rem;
+    }
 
 }

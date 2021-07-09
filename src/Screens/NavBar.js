@@ -1,15 +1,83 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './NavBar.css';
 import romeo_logo from '../Assets/romeo_logo2.svg'
-import { apiService } from '../Services/ApiService';
+import { useStateValue } from '../Context/StateProvider';
+import { ApiService } from '../Services/ApiService';
+import { actionType } from '../Context/Reducer';
+
+
 
 export const NavBar =()=> {
-    const [length, setLength] = useState(39);
-    const [users, setUsers] = useState([])
+    const [state, dispatch] = useStateValue();
+    const [length, setLength] = useState(100);
+    const [usersList, setUsersList] = useState([])
+    const [userIdList, setUserIdList] = useState([])
+    const {SET_USERS_LIST} = actionType
+
+    useEffect(()=>{
+        // window.addEventListener('scroll', infiniteScroll)
+        getUsers({length:length})
+    },[])
 
     const handleSearch = (e) => {
         const name = e.target.name;
+        let data = {
+            name: name,
+            length: length,
+        }
+        getUsers(data)
     }
+
+
+    const getUsers = async (data)=>{
+        try{           
+            let response
+            if (data?.name == 'distance' || data?.name =='activity' ) {
+                let sortType
+                if (data?.name == 'distance') {sortType = 'DISTANCE'}
+                if (data?.name == 'activity') {sortType = 'ACTIVITY'}               
+                response = await ApiService.searchUserWithSorting(data?.length,sortType)
+            } else {
+                response = await ApiService.searchUsers(data?.length);
+            }
+            console.log(response)
+            if(response?.status == 200){
+                if (response.data.items){           
+                    let users = [ ...response.data.items]
+                    let userIds = []
+                    users.forEach((user,i)=>{
+                        userIds.push(user.id)
+                    })
+                    getUserDetails(userIds)
+                    setUserIdList(userIds)
+                    setUsersList(users)                   
+                    dispatch({type: SET_USERS_LIST, payload: users})           
+                }
+            } else {
+                console.log(response.statusText)
+            }       
+        }catch(err){
+            console.log(err)
+        }
+    }
+
+    const getUserDetails = async(arr) => {
+        try{
+            let apiString = arr.join('&ids=')
+            const response = await ApiService.getProfilesById(apiString)
+            console.log(response)
+            if(response?.status == 200){
+                if (response.data){           
+                    
+                }
+            } else {
+                console.log(response.statusText)
+            } 
+
+        }catch(err){
+            throw err
+        }
+    } 
 
     return (
         <div className="topbar">

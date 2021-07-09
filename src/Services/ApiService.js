@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-export const apiService = {
+export const ApiService = {
     searchUsers: (length) => {
         return axios.get(`/api/search?length=${length}`)
     },

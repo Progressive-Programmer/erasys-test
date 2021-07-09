@@ -112,7 +112,7 @@ export const NavBar =()=> {
                 <div className="banner">
                     <ul>
                         <li className="navbarList">                     
-                            <a className="navbarOptions" ><img src={romeo_logo} alt="ROMEO" className="logo"/></a>
+                            <a className="navbarOptions " ><div  className="logo"/></a>
                         </li>
                         <li>                     
                             <a className="navbarOptions" >Distance</a>

@@ -15,6 +15,14 @@ export const  Users = () =>{
                 <div className="userGrid">
                     {usersList? usersList.map((user, i)=>{
                         const {picture, personal, location, name, online_status} = user;
+                            let status
+                            if (online_status=="ONLINE"){
+                                status = "loggedIn"
+                            } else if (online_status == "OFFLINE"){
+                                status = "loggedOut"
+                            } else if (online_status == "DATE") {
+                                status = "date"
+                            }
                     return(
                     <div className="userContainer">
                         <div className="userImage">
@@ -22,7 +30,7 @@ export const  Users = () =>{
                         </div>
                         <div className="userDetail">
                             <div className="row">
-                                <div className="col colDetail"><span>{personal ? personal.age+"  | "  : ''}{name? name : ''}</span><img/></div>
+                                <div className="col colDetail"><span>{personal ? personal.age+"  | "  : ''}{name? name : ''}<span className={status}> {status=="date"? '♥' : '●'}</span></span><img/></div>
                             </div>
                             <div className="row">
                                 <div className="col colLocation"><span>{location? location.distance : ''} </span><TelegramIcon style={{ fontSize: 10 }} /></div>

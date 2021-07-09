@@ -61,10 +61,22 @@ ul{
 .navbar li:active {
     color: white;
 }
+.navbarOptions div {
+    display: flex;
+}
+.logo {
+    z-index: 2333;
+    background-image: url('../Assets/romeo_logo2.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
+@media screen and (max-width: 1080px){
+   
+}
 @media screen and (max-width: 767px){
     .logo {
-        display: none;
+        background-image: url('../Assets/romeo_logo.svg');
     }
 }
 

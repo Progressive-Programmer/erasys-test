@@ -6,6 +6,12 @@
 - The user data is dynamic combined from both APIs (search and by id)
 - The page is responsive and so are the cards 
 - DISTANCE & ACTIVITY buttons are active and searches with sorting 
+- Showing these user info:
+    - Name
+    - Image 
+    - Age
+    - Distance
+    - Online Status
 
 
 

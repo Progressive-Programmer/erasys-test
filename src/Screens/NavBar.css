@@ -15,6 +15,9 @@ header {
 .logo {
     width: 9.375rem;   
 }
+.logoMobile{
+    display: none;
+}
 .navbar a, .navbar a:hover, .navbar a:focus,.navbar a:active {
     text-decoration: none;
     color: inherit;
@@ -61,23 +64,15 @@ ul{
 .navbar li:active {
     color: white;
 }
-.navbarOptions div {
+.navbarOptions img {
     display: flex;
-}
-.logo {
-    z-index: 2333;
-    background-image: url('../Assets/romeo_logo2.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 1080px){
    
 }
 @media screen and (max-width: 767px){
-    .logo {
-        background-image: url('../Assets/romeo_logo.svg');
-    }
+
 }
 
 @media screen and (max-width: 576px){
@@ -85,4 +80,7 @@ ul{
     .header{
         display:none ;
       }
+    .logoMobile {
+        width: 2rem;   
+    }
 }

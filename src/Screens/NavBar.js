@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './NavBar.css';
-import romeo_logo from '../Assets/romeo_logo2.svg';
+import romeo_logo2 from '../Assets/romeo_logo2.svg';
+import romeo_logo from '../Assets/romeo_logo.svg';
 import romeo_img from '../Assets/romeo_img.svg'
 import { useStateValue } from '../Context/StateProvider';
 import { ApiService } from '../Services/ApiService';
@@ -111,14 +112,14 @@ export const NavBar =()=> {
             <header className="header">
                 <div className="banner">
                     <ul>
-                        <li className="navbarList">                     
-                            <a className="navbarOptions " ><div  className="logo"/></a>
+                        <li>                     
+                            <a className="navbarOptions" ><img src={romeo_logo2} className="logo"/></a>
                         </li>
                         <li>                     
-                            <a className="navbarOptions" >Distance</a>
+                            <a className="navbarOptions" ></a>
                         </li>
                         <li>                     
-                            <a className="navbarOptions" >Activity</a>
+                            <a className="navbarOptions" ></a>
                         </li>
                     </ul>
                 </div>
@@ -128,6 +129,9 @@ export const NavBar =()=> {
             <div className="navbarBig">
                 <ul>
                     <li className="navbarList">                     
+                            <a className="navbarOptions" ><img src={romeo_logo} className="logoMobile"/></a>
+                    </li>
+                    <li >                     
                         <a className="navbarOptions" name="discover" onClick={handleSearch} >Discover</a>
                     </li>
                     <li>                     

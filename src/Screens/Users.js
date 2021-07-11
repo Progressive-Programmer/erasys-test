@@ -53,7 +53,7 @@ export const  Users = () =>{
                                 <div className="col colDetail"><span>{personal ? personal.age+"  | "  : ''}{name? name : ''}</span><img/></div>
                             </div>
                             <div className="row">
-                                <div className="col colLocation"><span>{location? location.distance : ''} </span><TelegramIcon style={{ fontSize: 10 }} /><span>    {location? location.name : ''} </span></div>
+                                <div className="col colLocation"><span>{location? location.distance+' km' : ''} </span><TelegramIcon style={{ fontSize: 10 }} /><span>    {location? location.name : ''} </span></div>
                             </div>
                         </div>
                     </div>

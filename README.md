@@ -13,7 +13,13 @@
     - Distance
     - Online Status: Red for offline, Green for onine, Heart-Red for date
     - Duration of last login in (Months, Days, Hours, Seconds) based on when was the last login done. (moment used)
-    - 
+    - User Profile Popup: Shows other details of the user 
+
+
+- Could be added 
+   - is_plus value
+   - Pagination or load on scroll of users list 
+
 
 
 

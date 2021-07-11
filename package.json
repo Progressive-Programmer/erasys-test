@@ -11,9 +11,11 @@
     "antd": "^4.16.6",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
+    "react-moment": "^1.1.1",
     "react-preloaders": "^3.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
@@ -44,5 +46,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://localhost:3000"
 }

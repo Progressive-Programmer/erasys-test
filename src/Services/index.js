@@ -1,1 +1,2 @@
-export * from 'ApiService.js'
+export * from './ApiService'
+export * from './Utils'

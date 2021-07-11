@@ -8,10 +8,12 @@
 - DISTANCE & ACTIVITY buttons are active and searches with sorting 
 - Showing these user info:
     - Name
-    - Image 
+    - Image and buffer image while loading or if image doesn't exists
     - Age
     - Distance
-    - Online Status
+    - Online Status: Red for offline, Green for onine, Heart-Red for date
+    - Duration of last login in (Months, Days, Hours, Seconds) based on when was the last login done. (moment used)
+    - 
 
 
 

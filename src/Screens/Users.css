@@ -12,7 +12,7 @@
 }
 .userGrid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));;
     
 }
 
@@ -28,7 +28,7 @@
     object-fit: contain;
 } */
 .userImage {
-    
+    height: min-content;
 }
 .userImageBox {
     width: 100%;
@@ -39,6 +39,9 @@
     font-size: 0.7rem;
     text-align: left !important;
     margin-left: 5px;
+    position: relative;
+    bottom: 25px;
+    height: 0;
 }
 .userHeaderText{
     margin-left: 2px;

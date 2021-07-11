@@ -119,7 +119,7 @@ export const NavBar =()=> {
                 <div className="banner">
                     <ul>
                         <li>                     
-                            <a className="navbarOptions" ><img src={romeo_logo2} className="logo"/></a>
+                            <a className="navbarOptions" name="discover" onClick={handleSearch} ><img src={romeo_logo2} className="logo"/></a>
                         </li>
                         <li>                     
                             <a className="navbarOptions" ></a>
@@ -135,7 +135,7 @@ export const NavBar =()=> {
             <div className="navbarBig">
                 <ul>
                     <li className="navbarList">                     
-                            <a className="navbarOptions" ><img src={romeo_logo} className="logoMobile"/></a>
+                        <a className="navbarOptions" ><img src={romeo_logo} className="logoMobile"/></a>
                     </li>
                     <li >                     
                         <a className="navbarOptions" name="discover" onClick={handleSearch} >Discover</a>

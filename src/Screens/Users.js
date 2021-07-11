@@ -40,17 +40,16 @@ export const  Users = () =>{
                                 <div className="userHeader">
                                     <span className={`userHeaderText ${status}`}> {status=="date"? '♥' : '●'}</span>
                                     <span className="userHeaderText">{last_login? lastLogin:''} </span>
+                                    <div className=""></div>
+                                    <div className=""></div>
                                 </div>
-                                <div className=""></div>
-                                <div className=""></div>
-                            {/* </div> */}
                         </div>
                         <div className="userDetail">
                             <div className="row">
                                 <div className="col colDetail"><span>{personal ? personal.age+"  | "  : ''}{name? name : ''}</span><img/></div>
                             </div>
                             <div className="row">
-                                <div className="col colLocation"><span>{location? location.distance : ''} </span><TelegramIcon style={{ fontSize: 10 }} /></div>
+                                <div className="col colLocation"><span>{location? location.distance : ''} </span><TelegramIcon style={{ fontSize: 10 }} /><span>    {location? location.name : ''} </span></div>
                             </div>
                         </div>
                     </div>

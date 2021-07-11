@@ -27,6 +27,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1000;
 }
 .navbar{  
     color: aliceblue;
@@ -35,7 +36,7 @@ header {
     height: 3rem;
     text-transform: uppercase;
     border-top: rgba(0, 0, 0, 0.681) 1px solid ;
- 
+    z-index: 1000;
 }
 
 ul{
@@ -56,6 +57,9 @@ ul{
     color: #00bdff;
     display: block;
     margin-right: 1rem;
+    
+}
+.navbar li, .header li {
     cursor: pointer;
 }
 .navbar li:hover {

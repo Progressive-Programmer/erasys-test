@@ -1,5 +1,11 @@
 # Quick current view
-![Screenshot 2021-07-10 at 3 39 18 AM](https://user-images.githubusercontent.com/25490780/125140750-d600f980-e130-11eb-8073-6c5fee78be37.png)
+
+## Desktop view 
+![Screenshot 2021-07-11 at 6 26 26 PM](https://user-images.githubusercontent.com/25490780/125195981-b9220e80-e275-11eb-8a4b-13c76d7ad5b2.png)
+
+## Mobile view
+![Screenshot 2021-07-11 at 6 25 32 PM](https://user-images.githubusercontent.com/25490780/125195954-9db70380-e275-11eb-84fe-83caa435283b.png)
+
 
 ## Updates 
 

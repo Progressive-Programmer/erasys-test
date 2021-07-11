@@ -38,3 +38,4 @@ In the project directory, you can run:
 
 ### `npm start`
 
+API url is added to `package.json` as `"proxy":"http://localhost:3000"`

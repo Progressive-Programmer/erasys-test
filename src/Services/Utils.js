@@ -1,7 +1,7 @@
 import moment from "moment"
 
 export const lastLoginDuration = (last_login)=>{
-// last login format is in UTC
+// last login format is in UTC 
 let _last_login = moment(last_login)
 let diff = moment().utc().diff(_last_login)
 let duration = moment.duration(diff);
@@ -47,4 +47,10 @@ if (months == 0){
 
 
 //    let duration = moment.duration(moment().utc().diff(moment(last_login))).asDays()
+}
+
+
+// converting "CLEAN_TEXT" to "Clean text"
+export const textCleanser = (text)=> {
+    return text.charAt(0)+text.substring(1).toLowerCase().replace('_',' ')
 }

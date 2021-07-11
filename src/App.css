@@ -1,8 +1,6 @@
 .App {
   text-align: center;
   color: aliceblue;
-  min-height: 100vh;
-  width: 100%;
 }
 .appContainer{
   display: flex;

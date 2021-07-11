@@ -11,7 +11,7 @@ import { actionType } from '../Context/Reducer';
 
 export const NavBar =()=> {
     const [state, dispatch] = useStateValue();
-    const [length, setLength] = useState(100);
+    const [length, setLength] = useState(599);
     const [skelton, setSkleton] = useState([]);
     const [usersList, setUsersList] = useState([]);
     const [userIdList, setUserIdList] = useState([]);

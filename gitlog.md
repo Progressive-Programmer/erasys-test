@@ -1,4 +1,32 @@
-commit 32ab1b93e356c0152396afa5c49026697b7ec479 (HEAD -> master, origin/master)
+commit d2bc68c05fa71893133faa28b0745a929478a25e (HEAD -> master, origin/master)
+Author: Aman <aman.singh@subcodevs.com>
+Date:   Sun Jul 11 18:18:00 2021 +0530
+
+    NavBar.js length changed to 599
+
+ src/Screens/NavBar.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c9d72747330e247eb3520da078283e65fed8d269
+Author: Aman <aman.singh@subcodevs.com>
+Date:   Sun Jul 11 18:16:23 2021 +0530
+
+    README.md updated
+
+ README.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 518351c7c45f289ec2b9bb3d002e1c5d2e201056
+Author: Aman <aman.singh@subcodevs.com>
+Date:   Sun Jul 11 18:15:09 2021 +0530
+
+    gitlog.md added
+
+ README.md |   8 +-
+ gitlog.md | 297 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 304 insertions(+), 1 deletion(-)
+
+commit 32ab1b93e356c0152396afa5c49026697b7ec479
 Author: Aman <aman.singh@subcodevs.com>
 Date:   Sun Jul 11 17:57:42 2021 +0530
 

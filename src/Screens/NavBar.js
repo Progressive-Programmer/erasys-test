@@ -19,18 +19,24 @@ export const NavBar =()=> {
 
     useEffect(()=>{
         // window.addEventListener('scroll', infiniteScroll)
+        showSkeleton(length)
         getUsers({length:length})
     },[])
 
-    const handleSearch = (e) => {
-        // showing skeleton while loading
+    // showing skeleton while loading
+    const showSkeleton = ()=>{
+        let count = length
         let userList = []
-        while(userList.length < usersList.length){
+        while(userList.length < usersList.length || count >0){
             let data = {picture:{url:romeo_img }}
             userList.push(data)
+            count--
         }
         dispatch({type: SET_USERS_LIST, payload: userList})
-        // ==================================
+    }
+
+    const handleSearch = (e) => {
+        showSkeleton()
         const name = e.target.name;
         let data = {
             name: name,

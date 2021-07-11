@@ -11,7 +11,7 @@
 
 - The user data is dynamic combined from both APIs (search and by id)
 - The page is responsive and so are the cards 
-- DISTANCE & ACTIVITY buttons are active and searches with sorting 
+- DISTANCE & ACTIVITY are active and searches with sorting, Romeo_logo & DISCOVER fetches search of total 599 users. 
 - Showing these user info:
     - Name
     - Image and buffer image while loading or if image doesn't exists

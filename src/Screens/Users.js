@@ -16,7 +16,7 @@ export const  Users = () =>{
             <div className="userWrapper">
                 <div className="userGrid">
                     {usersList? usersList.map((user, i)=>{
-                        const {picture, personal, location, name, online_status, last_login} = user;
+                        const {picture, personal, location, name, online_status, last_login, headline} = user;
                             let status,lastLogin
                             if (online_status=="ONLINE"){
                                 status = "loggedIn"
@@ -40,7 +40,7 @@ export const  Users = () =>{
                                 <div className="userHeader">
                                     <span className={`userHeaderText ${status}`}> {status=="date"? '♥' : '●'}</span>
                                     <span className="userHeaderText">{last_login? lastLogin:''} </span>
-                                    <div className=""></div>
+                                    <div className="userHeadline" title={headline? headline: ''}>{headline? headline:''}</div>
                                     <div className=""></div>
                                 </div>
                         </div>

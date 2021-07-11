@@ -39,15 +39,24 @@
     font-size: 0.7rem;
     text-align: left !important;
     margin-left: 5px;
+    margin-right: 5px;
     position: relative;
-    bottom: 25px;
+    bottom: 37px;
     height: 0;
 }
 .userHeaderText{
     margin-left: 2px;
     margin-right: 5px;
 }
-
+.userHeadline{
+    background-color: rgba(6, 6, 6, 0.5);
+    line-height: 1.5;
+    padding-left: 4px;
+    border-radius: 3px;
+    overflow: hidden;
+    max-height: 18px;
+  
+}
 .userDetail {
     height: max-content;
     background-color: #154b63 !important;

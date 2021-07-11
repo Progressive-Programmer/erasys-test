@@ -19,7 +19,6 @@ function App() {
         <NavBar/>
         <Users/>
       </div>
-      {/* <Footer/>       */}
     </div>
   );
 }
